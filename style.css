@@ -1,0 +1,200 @@
+:root{
+  --White: #ffffff;
+  --Pale-blue: #ebf1ff;
+  --Light-red: #ff5757;
+  --Green-teal: #00bd91;
+  --Cobalt-blue: #1125d4;
+  --Light-lavender: #c8c7ff;
+  --Dark-gray-blue: #303b5a;
+  --Orangey-yellow: #ffb01f;
+  --Violet-blue-circle: #4e21ca;
+  --Persian-blue-circle: #2421ca14;
+  --Light-slate-blue-background: #7857ff;
+  --Light-royal-blue-background: #2e2be9;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p{
+  font-size: 18px;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Hanken Grotesk';
+}
+.container{
+  width: 300px;
+  display: flex;
+  height: 450px;
+  transition: 1s;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 20px ;
+  background-color: var(--White);
+  box-shadow: 15px 15px 20px 5px var(--Pale-blue);
+}
+.result{
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 300px;
+  height: 450px;
+  padding: 30px;
+  display: flex;
+  transition: 1s;
+  position: absolute;
+  align-items: center;
+  border-radius: 20px;
+  flex-direction: column;
+  background: linear-gradient(  var(--Light-slate-blue-background) , var(--Light-royal-blue-background)) ;
+}
+.container .result h3{
+  color: #fffc;
+  margin-bottom: 20px;
+}
+.container .result .circle{
+  width: 150px;
+  height: 150px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: .4s;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(var(--Violet-blue-circle)  ,rgb(80, 80, 253) , var(--Persian-blue-circle));
+}
+.container .result .circle .amount{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%,-50%);
+}
+.container .result .circle .amount p{
+  font-size: 50px;
+  font-weight: 800;
+  width: fit-content;
+  color: var(--White);
+}
+.container .result .circle .amount span{
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff80;
+}
+.container h2{
+  margin: 20px 0;
+  color: var(--White);
+}
+.container .result p{
+  width: 200px;
+  color: #fffc;
+  font-size: 14px;
+  text-align: center;
+}
+.container .summary{
+  right: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  transition: 1s;
+  position: absolute;
+}
+.container .summary h3{
+  margin-bottom: 20px;
+}
+.container .summary .info{
+  display: flex;
+  padding: 15px 10px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.container .summary .info span{
+  color: black;
+  font-weight: 700;
+}
+.container .summary .info span span{
+  color: #00000082;
+}
+.container .summary .info div p{
+  margin-left: 10px;
+}
+
+.container .summary .info div{
+  display: flex;
+  justify-content: space-between;
+}
+.container .summary .reaction{
+  background-color: #ff57571a;
+  color: var(--Light-red);
+}
+.container .summary .memory{
+  background-color: #ffb01f1a;
+  color: var(--Orangey-yellow);
+}
+.container .summary .verbal{
+  background-color: #00bd911a;
+  color: var(--Green-teal);
+}
+.container .summary .visual{
+  color: var(--Cobalt-blue);
+  background-color: #1125d41a;
+}
+.container .summary .btn {
+  text-align: center;
+}
+.container .summary .btn a{
+  border-radius: 25px;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  color: var(--White);
+  background: var(--Dark-gray-blue);
+  font-weight: 700;
+}
+.container .btn a:hover{
+  background: linear-gradient(  var(--Light-slate-blue-background) , var(--Light-royal-blue-background)) ;
+}
+.active{
+  width: 600px;
+}
+.active .result{
+  width: 50%;
+}
+.active .summary{
+  width: 50%;
+}
+@media (max-width:767px) {
+  .active{
+    height: 90vh;
+    width: 300px;
+  }
+  .active .result{
+    width: 100%;
+    height: 45vh;
+  }
+  .active .result .circle{
+    width: 100px;
+    height: 100px;
+  }
+  .active .summary{
+    width: 100%;
+    height: 45vh;
+    bottom: 0;
+  }
+  .active .summary .info{
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .active .summary .btn a{
+    padding: 10px 0;
+  }
+}
